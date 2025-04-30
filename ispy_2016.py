@@ -21,28 +21,19 @@ files = FileUtils.loadListFromFile("DoubleMu_2016G.txt")
 #files = FileUtils.loadListFromFile("DoubleMu_2016H.txt")
 #files = FileUtils.loadListFromFile("DoubleEG_2016H.txt")
 
-print(files)
-
 newfiles = [f.replace('/store/data', prefix) for f in files]
 
+run_events = FileUtils.loadListFromFile("run_event.txt")
 
-
-print(newfiles)
-
-
-process.source = cms.Source("PoolSource",
-                            fileNames = cms.untracked.vstring(
-                                'root://eospublic.cern.ch//eos/opendata/cms/Run2016G/DoubleMuon/MINIAOD/UL2016_MiniAODv2-v1/270000/AF85BB29-916D-3C48-86BD-5CA7E832A6A4.root'
-
-                            )
-                                ,eventsToProcess = cms.untracked.VEventRange(
-                                    '278874:187933819',
-                            )
+process.source = cms.Source(
+    "PoolSource",
+    fileNames = cms.untracked.vstring(*newfiles),
+    eventsToProcess = cms.untracked.VEventRange(*run_events)
 )
 
 process.add_(
     cms.Service("ISpyService",
-    outputFileName = cms.untracked.string('fourlepton_miniAOD.ig'),
+    outputFileName = cms.untracked.string('DoubleMu2016G.ig'),
     outputMaxEvents = cms.untracked.int32(50)
     )
 )
