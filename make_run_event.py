@@ -16,7 +16,7 @@ run_event_file = open('run_event.txt', 'w')
 run_event_list = [f'{r}:{e}' for r,e in zip(df['Run'].tolist(), df['Event'].tolist())]
 
 for rel in run_event_list:
-    run_event_file.write(f'"{rel}"\n')
+    run_event_file.write(f'{rel}\n')
 
 run_event_file.close()
     
