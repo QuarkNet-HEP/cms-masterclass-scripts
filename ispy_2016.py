@@ -16,8 +16,8 @@ prefix = 'root://eospublic.cern.ch//eos/opendata/cms'
 
 import FWCore.Utilities.FileUtils as FileUtils
 
-files = FileUtils.loadListFromFile("DoubleMu_2016G.txt")
-#files = FileUtils.loadListFromFile("DoubleEG_2016G.txt")
+#files = FileUtils.loadListFromFile("DoubleMu_2016G.txt")
+files = FileUtils.loadListFromFile("DoubleEG_2016G.txt")
 #files = FileUtils.loadListFromFile("DoubleMu_2016H.txt")
 #files = FileUtils.loadListFromFile("DoubleEG_2016H.txt")
 
@@ -33,7 +33,7 @@ process.source = cms.Source(
 
 process.add_(
     cms.Service("ISpyService",
-    outputFileName = cms.untracked.string('DoubleMu2016G.ig'),
+    outputFileName = cms.untracked.string('DoubleEG2016G.ig'),
     outputMaxEvents = cms.untracked.int32(50)
     )
 )
