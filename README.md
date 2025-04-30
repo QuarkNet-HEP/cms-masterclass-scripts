@@ -16,5 +16,5 @@ jupyter lab
 ```
 
 * `fourlepton.ipynb` reads the information from the csv files into a pandas dataframe
-* `invariantmass.ipynd` reads the information from the csv files into a pandas dataframe and plots the invariant mass
-* `dasfiles.ipynb` generates the DAS queries for the equivalent miniaod files; the .sh files have to be run on lxplus to generate the resulting file lists (be sure to run `voms-proxy-init --voms cms`)
+* `invariantmass.ipynb` reads the information from the csv files into a pandas dataframe and plots the invariant mass
+* `dasfiles.py` generates the DAS queries for the equivalent miniaod files; the .sh files have to be run on lxplus to generate the resulting file lists (be sure to run `voms-proxy-init --voms cms`)
