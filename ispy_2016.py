@@ -1,15 +1,34 @@
 import FWCore.ParameterSet.Config as cms
+from Configuration.Eras.Era_Run2_2018_cff import Run2_2018
+from FWCore.MessageLogger.MessageLogger_cfi import *
 
-process = cms.Process('ISPY')
+process = cms.Process("process", Run2_2018)
 
 process.load('Configuration.StandardSequences.GeometryDB_cff')
 process.load('Configuration.StandardSequences.MagneticField_cff')
 process.load('Configuration.StandardSequences.FrontierConditions_GlobalTag_cff')
 
-process.GlobalTag.globaltag = '106X_dataRun2_v37'
+from Configuration.AlCa.GlobalTag import GlobalTag
+process.GlobalTag = GlobalTag(process.GlobalTag, 'auto:run2_data', '')
 
 # Note: this will replace /store/data in file name
 prefix = 'root://eospublic.cern.ch//eos/opendata/cms'
+
+import FWCore.Utilities.FileUtils as FileUtils
+
+files = FileUtils.loadListFromFile("DoubleMu_2016G.txt")
+#files = FileUtils.loadListFromFile("DoubleEG_2016G.txt")
+#files = FileUtils.loadListFromFile("DoubleMu_2016H.txt")
+#files = FileUtils.loadListFromFile("DoubleEG_2016H.txt")
+
+print(files)
+
+newfiles = [f.replace('/store/data', prefix) for f in files]
+
+
+
+print(newfiles)
+
 
 process.source = cms.Source("PoolSource",
                             fileNames = cms.untracked.vstring(
