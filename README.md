@@ -6,6 +6,9 @@ Scripts for preparation of the CMS masterclass
 The input four-lepton events come from the analysis found [here](https://gitlab-p4n.aip.de/lucas.karwatzki/DPG_HEP_HiggsTo4L_PUNCH). 
 There, I have modified the analysis code to output the selected event information to the csv files found here.
 
+The input one-lepton events are selected [here](https://github.com/QuarkNet-HEP/Wmunu-jupyter) and [here](https://github.com/QuarkNet-HEP/Wenu-jupyter).
+
+
 ## Usage
 
 ```

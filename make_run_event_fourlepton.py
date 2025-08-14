@@ -11,7 +11,7 @@ df = pd.concat(
 
 df = df.drop_duplicates(subset=['Event'], keep='first')
 
-run_event_file = open('run_event.txt', 'w')
+run_event_file = open('run_event_fourlepton.txt', 'w')
 
 run_event_list = [f'{r}:{e}' for r,e in zip(df['Run'].tolist(), df['Event'].tolist())]
 

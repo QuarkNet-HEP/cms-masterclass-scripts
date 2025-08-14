@@ -23,7 +23,7 @@ files = FileUtils.loadListFromFile("DoubleEG_2016H.txt")
 
 newfiles = [f.replace('/store/data', prefix) for f in files]
 
-run_events = FileUtils.loadListFromFile("run_event.txt")
+run_events = FileUtils.loadListFromFile("run_event_fourlepton.txt")
 
 process.source = cms.Source(
     "PoolSource",
