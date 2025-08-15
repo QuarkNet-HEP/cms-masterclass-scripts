@@ -8,6 +8,7 @@ There, I have modified the analysis code to output the selected event informatio
 
 The input one-lepton events are selected [here](https://github.com/QuarkNet-HEP/Wmunu-jupyter) and [here](https://github.com/QuarkNet-HEP/Wenu-jupyter).
 
+The input two-lepton events are selected [here](https://github.com/QuarkNet-HEP/Zmumu-jupyter) and [here](https://github.com/QuarkNet-HEP/Zee-jupyter)
 
 ## Usage
 
