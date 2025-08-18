@@ -39,7 +39,7 @@ process.add_(
 )
 
 process.maxEvents = cms.untracked.PSet(
-    input = cms.untracked.int32(100)
+    input = cms.untracked.int32(90)
 )
 
 process.load("ISpy.Analyzers.ISpyEvent_cfi")
