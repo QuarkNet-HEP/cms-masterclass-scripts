@@ -9,22 +9,22 @@ command = "/cvmfs/cms.cern.ch/common/dasgoclient"
 inputs = [
     {
         'name': 'DoubleEG_2016G', 
-        'run_event_lumi': make_run_event_lumi(pd.read_csv('csv/DoubleEG_2016G.csv')),
+        'run_event_lumi': make_run_event_lumi(pd.read_csv('../csv/DoubleEG_2016G.csv')),
         'dataset': '/DoubleEG/Run2016G-UL2016_MiniAODv2-v1/MINIAOD'
     },
     {
         'name': 'DoubleEG_2016H',
-        'run_event_lumi': make_run_event_lumi(pd.read_csv('csv/DoubleEG_2016H.csv')),
+        'run_event_lumi': make_run_event_lumi(pd.read_csv('../csv/DoubleEG_2016H.csv')),
         'dataset': '/DoubleEG/Run2016H-UL2016_MiniAODv2-v1/MINIAOD',
     },
     {
         'name': 'DoubleMu_2016G',
-        'run_event_lumi': make_run_event_lumi(pd.read_csv('csv/DoubleMu_2016G.csv')),
+        'run_event_lumi': make_run_event_lumi(pd.read_csv('../csv/DoubleMu_2016G.csv')),
         'dataset': '/DoubleMuon/Run2016G-UL2016_MiniAODv2-v1/MINIAOD',
     },
     {
         'name': 'DoubleMu_2016H',
-        'run_event_lumi': make_run_event_lumi(pd.read_csv('csv/DoubleMu_2016H.csv')),
+        'run_event_lumi': make_run_event_lumi(pd.read_csv('../csv/DoubleMu_2016H.csv')),
         'dataset': '/DoubleMuon/Run2016H-UL2016_MiniAODv2-v2/MINIAOD',
     }
 ]
