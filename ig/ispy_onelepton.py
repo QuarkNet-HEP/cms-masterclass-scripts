@@ -17,13 +17,14 @@ prefix = 'root://eospublic.cern.ch//eos/opendata/cms'
 import FWCore.Utilities.FileUtils as FileUtils
 
 #files = FileUtils.loadListFromFile("SingleMuonRun2016H.txt")
-files = FileUtils.loadListFromFile("SingleElectronRun2016G.txt")
-#output_file_name = 'SingleMuon2016H.ig'
-output_file_name = 'SingleElectron2016G.ig'
+#output_file_name = 'Wmunu_plus.ig'
+#run_events = FileUtils.loadListFromFile("run_event_Wmunu_plus.txt")
+
+files = FileUtils.loadListFromFile("SingleMuonRun2016H.txt")
+output_file_name = 'Wmunu_minus6ig'
+run_events = FileUtils.loadListFromFile("run_event_Wmunu_minus.txt")
 
 newfiles = [f.replace('/store/data', prefix) for f in files]
-
-run_events = FileUtils.loadListFromFile("run_event_onelepton.txt")
 
 process.source = cms.Source(
     "PoolSource",
@@ -34,12 +35,12 @@ process.source = cms.Source(
 process.add_(
     cms.Service("ISpyService",
     outputFileName = cms.untracked.string(output_file_name),
-    outputMaxEvents = cms.untracked.int32(50)
+    outputMaxEvents = cms.untracked.int32(100)
     )
 )
 
 process.maxEvents = cms.untracked.PSet(
-    input = cms.untracked.int32(100)
+    input = cms.untracked.int32(-1)
 )
 
 process.load("ISpy.Analyzers.ISpyEvent_cfi")

@@ -8,7 +8,7 @@ command = "/cvmfs/cms.cern.ch/common/dasgoclient"
 inputs = [
     {
         'name': 'JpsiMuMuRun2016H', 
-        'run_lumi': make_run_lumi(pd.read_csv('../csv/JpsiMuMuRun2016H.csv')),
+        'run_lumi': make_run_lumi(pd.read_csv('../csv/JpsiMuMuRun2016H.csv').iloc[:500]),
         'dataset': '/MuOnia/Run2016H-UL2016_MiniAODv2-v2/MINIAOD'
     }
 ]
